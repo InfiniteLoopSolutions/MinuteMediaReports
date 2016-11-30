@@ -1,0 +1,13 @@
+﻿body {
+    background-color: gray;
+    font-family: "Open sans", sans-serif;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.menu-left {
+    padding-left: 0;
+    margin-top: 0;
+}

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Infinite Loop</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome.min.css" rel="stylesheet" />
+    <link href="app.css" rel="stylesheet" />
+    <link href="frameworkCore/framework.css" rel="stylesheet" />
+    <link href="menu/menu.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="angular/angular.js"></script>
+    <script type="text/javascript" src="angular-route/angular-route.js"></script>
+
+    <script type="text/javascript" src="menu/menu.js"></script>
+    <script type="text/javascript" src="menu/menuController.js"></script>
+    <script type="text/javascript" src="menu/menuDirective.js"></script>
+    <script type="text/javascript" src="menu/menuItemDirective.js"></script>
+    <script type="text/javascript" src="menu/menuGroupDirective.js"></script>
+
+    <script type="text/javascript" src="dashboard/dashboard.js"></script>
+
+    <script type="text/javascript" src="frameworkCore/framework.js"></script>
+    <script type="text/javascript" src="frameworkCore/frameworkController.js"></script>
+    <script type="text/javascript" src="frameworkCore/frameworkDirective.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="appconfig.js"></script>
+    <script type="text/javascript" src="appRoutes.js"></script>
+
+    <script src="directives/dashboardDirective.js"></script>
+    <script src="directives/pieDirective.js"></script>
+    <script src="directives/lineDirective.js"></script>
+
+    <script type="text/javascript" src="chart.js/dist/Chart.js"></script>
+    <script type="text/javascript" src="angular-chart.js/dist/angular-chart.js"></script>
+
+    <script type="text/javascript" src="dataService.js"></script>
+</head>
+
+<body class="container-fluid">
+    <framework title="Infinite Loop" subtitle="Solutions" icon-file="yoda_256.png">
+        <menu class="menu-left">
+            <menu-item label="Dashboard" icon="fa-dashboard" route="dashboard"></menu-item>
+            <menu-group label="Reports" icon="fa-gears">
+                <menu-item label="Bar" icon="fa-bar-chart" route="bar"></menu-item>
+                <menu-item label="Customer visit" icon="fa-pie-chart" route="reportOne"></menu-item>
+                <menu-item label="Line" icon="fa-line-chart" route="line"></menu-item>
+            </menu-group>
+            <menu-item label="Locations" icon="fa-globe" route="locations"></menu-item>
+            <menu-item label="Account" icon="fa-user" route="account"></menu-item>
+            <menu-item label="Contact" icon="fa-compress" route="contact"></menu-item>           
+        </menu>        
+    </framework>
+</body>
+</html>
