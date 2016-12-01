@@ -7,9 +7,9 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
             templateUrl : "graphs/line.html",
             controller: "LineCtrl"
         })
-        .when("/bar", {
-            templateUrl : "graphs/bar.html",
-            controller: "BarCtrl"
+        .when("/ServiceDay", {
+            templateUrl : "graphs/serviceDay.html",
+            controller: "ServiceDayCtrl"
         })
         .when("/reportOne", {
             templateUrl : "graphs/customerVisit.html",

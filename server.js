@@ -22,8 +22,13 @@ app.get('/reportOne', function(request, response) {
     response.send(reportOne.pieDuration(request.query.queryDate, request.query.venueid))
 });
 
-app.get('/reportTwo', function(request, response) {
-    response.send('Hello from Two!')
+app.get('/serviceDay', function(request, response) {
+
+    var labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+    var data = [[65, 59, 80, 81, 56, 55, 40], [28, 48, 40, 19, 86, 27, 90]];
+
+    response.send([labels, data]);
+
 });
 
 app.get('/reportThree', function(request, response) {
