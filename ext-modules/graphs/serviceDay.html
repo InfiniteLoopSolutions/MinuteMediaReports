@@ -1,4 +1,12 @@
 ﻿<div>
+    <div>
+
+        {{date | date:'yyyy-MM'}}
+
+        <select ng-model="selectedName" ng-options="x for x in names" ng-change="changeDate(this)">
+        </select>
+    </div>
+
     <canvas id="bar" class="chart chart-bar"
             chart-data="data" chart-labels="labels" chart-series="series"
             height="688" width="1376"
