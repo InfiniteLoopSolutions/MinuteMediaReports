@@ -41,6 +41,7 @@ angular.module("app").controller("datepickerCtrl", ["$scope", function ($scope) 
     tomorrow.setDate(tomorrow.getDate() + 1);
     var afterTomorrow = new Date(tomorrow);
     afterTomorrow.setDate(tomorrow.getDate() + 1);
+
     $scope.events = [
         {
             date: tomorrow,

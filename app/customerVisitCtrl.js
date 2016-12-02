@@ -3,9 +3,8 @@
  */
 "use strict"
 
-angular.module("app").controller("customerVisitCtrl", ["$scope", "DataService", function ($scope, DataService) {
+angular.module("app").controller("customerVisitCtrl", ["$scope", "customerVisitsService", function ($scope, customerVisitsService) {
 
-    $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
     $scope.options = {
         scales: {
             yAxes: [
@@ -25,14 +24,12 @@ angular.module("app").controller("customerVisitCtrl", ["$scope", "DataService", 
         }
     };
 
-    var pieData = [];
     $scope.date = new Date();
-
+    $scope.names = [28, 23];
     $scope.changeDate = function(selectedDay){
-        pieData = DataService.reportOne(selectedDay.selectedName);
-
-        $scope.labels = pieData[0];
-        $scope.data = pieData[1];
+        customerVisitsService.visits($scope.selectedDate).then(function(response) {
+            $scope.labels = response.data[0];
+            $scope.data =  response.data[1];
+        });
     };
-
 }]);

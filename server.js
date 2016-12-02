@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html')); // load the single view file (angular will handle the page changes on the front-end)
 });
 
-app.get('/reportOne', function(request, response) {
+app.get('/customerVisits', function(request, response) {
     response.send(reportOne.pieDuration(request.query.queryDate, request.query.venueid))
 });
 

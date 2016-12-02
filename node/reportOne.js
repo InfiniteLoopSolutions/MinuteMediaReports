@@ -1,7 +1,6 @@
 /**
  * Created by jude on 28/11/2016.
  */
-
 module.exports = {
 
     pieDuration: function (queryDate, venueid) {
@@ -34,9 +33,8 @@ module.exports = {
             if (previousMac !== currentMac)
                 previousTime = currentTime;
 
-            if (previousTime === 0) {
+            if (previousTime === 0)
                 previousTime = currentTime;
-            }
 
             if (currentTime - previousTime > 0 && currentTime - previousTime < 30 * 60 * 1000)
                 lessThan30++;
@@ -80,18 +78,12 @@ module.exports = {
                     for (var i = 0; i < result.length; i++) {
                         calcFrequencies(result[i]);
                     }
-
                 } else {
                     console.log('No document(s) found with defined "find" criteria!');
                 }
             });
             db.close;
         });
-
-
-        var labels = ["< 30", "30 - 60", "60 - 90", "90 - 120", "> 120"];
-        var data = [lessThan30, between3060, between6090, between90120, greaterThan120];
-
         return [labels, data];
     }
 }

@@ -3,17 +3,17 @@
 angular.module('app').config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-        .when("/line", {
-            templateUrl : "graphs/line.html",
-            controller: "LineCtrl"
+        .when("/HeadCount", {
+            templateUrl : "graphs/headCount.html",
+            controller: "customerHeadCountCtrl"
         })
         .when("/ServiceDay", {
             templateUrl : "graphs/serviceDay.html",
-            controller: "ServiceDayCtrl"
+            controller: "serviceDayCtrl"
         })
-        .when("/reportOne", {
+        .when("/CustomerVisit", {
             templateUrl : "graphs/customerVisit.html",
-            controller: "reportOneCtrl"
+            controller: "customerVisitCtrl"
         })
 
     $routeProvider.otherwise({ redirectTo: '/' });
