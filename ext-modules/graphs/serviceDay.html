@@ -1,15 +1,20 @@
-﻿<div>
-    <div>
-
-        {{date | date:'yyyy-MM'}}
-
-        <select ng-model="selectedName" ng-options="x for x in names" ng-change="changeDate(this)">
-        </select>
+﻿<div class="container">
+    <div class="row">
+        <div class='col-sm-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' id="thisDate" class="form-control"/>
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <canvas id="bar" class="chart chart-bar"
-            chart-data="data" chart-labels="labels" chart-series="series"
-            height="688" width="1376"
-            style="display: block; width: 688px; height: 344px;">
-    </canvas>
+    <select class='input-group selectable-item' ng-model="selectedName" ng-options="x for x in names"/>
+    <button class="btn btn-primary" ng-click="changeDate(this)">Run report</button>
+
+    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"
+            height="688" width="1376" style="display: block; width: 688px; height: 344px;"/>
 </div>

@@ -5,8 +5,7 @@ angular.module('menu').directive('menuGroup', function () {
         require: '^menu',
         transclude: true,
         scope: {
-            label: '@',
-            icon: '@'
+            label: '@', icon: '@'
         },
         templateUrl: 'menu/menuGroup.html',
         link: function (scope, el, attr, ctrl) {

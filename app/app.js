@@ -1,3 +1,3 @@
 ﻿"use strict";
 
-angular.module("app", ["ngRoute", "chart.js", "framework"]);
+angular.module("app", ["ngRoute", "ngMaterial", "ngMessages", "ngAnimate","ngAria", "ngPlacesMap", "chart.js", "framework"]);

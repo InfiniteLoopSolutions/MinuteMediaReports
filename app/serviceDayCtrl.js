@@ -25,12 +25,22 @@ angular.module("app").controller("serviceDayCtrl", ["$scope", "serviceDayService
         }
     };
 
-    $scope.date = new Date();
     $scope.names = ["7 Days", "4 Weeks", "6 Months"];
-    $scope.date = new Date();
+
+    $('#datetimepicker1').datetimepicker({
+        viewMode: 'days',
+        format: 'DD/MM/YYYY'
+    });
 
     $scope.changeDate = function() {
-        serviceDayService.day($scope.date, $scope.selectedName).then(function(response) {
+
+        $scope.data = null;
+        $scope.labels = null;
+        $scope.series = null;
+
+        var selectedDate = $("#thisDate").val();
+
+        serviceDayService.day(selectedDate, $scope.selectedName).then(function(response) {
             $scope.labels = response.data[0];
             $scope.data = response.data[1];
         });

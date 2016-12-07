@@ -7,12 +7,22 @@
     <link href="bootstrap.min.css" rel="stylesheet" />
     <link href="font-awesome.min.css" rel="stylesheet" />
     <link href="app.css" rel="stylesheet" />
+    <link href="graphs/graph.css" rel="stylesheet" />
     <link href="frameworkCore/framework.css" rel="stylesheet" />
     <link href="menu/menu.css" rel="stylesheet" />
 
     <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="angular/angular.js"></script>
+    <script type="text/javascript" src="angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="angular-aria/angular-aria.js"></script>
+
+    <script type="text/javascript" src="moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 
     <script type="text/javascript" src="menu/menu.js"></script>
     <script type="text/javascript" src="menu/menuController.js"></script>
@@ -31,15 +41,20 @@
 
     <script src="directives/dashboardDirective.js"></script>
     <script src="directives/pieDirective.js"></script>
-    <script src="directives/lineDirective.js"></script>
+    <script src="directives/headCountDirective.js"></script>
+    <script src="directives/customerVisitsDirective.js"></script>
 
     <script type="text/javascript" src="chart.js/dist/Chart.js"></script>
     <script type="text/javascript" src="angular-chart.js/dist/angular-chart.js"></script>
 
     <script type="text/javascript" src="dataService.js"></script>
-    <script type="text/javascript" src="app/customerHeadCount.js"></script>
-    <script type="text/javascript" src="app/customerVisitCtrl.js"></script>
     <script type="text/javascript" src="app/serviceDayCtrl.js"></script>
+
+    <!-- Google Places API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+    <script src="public/angular-google-places-map/dist/js/ngplacesmap.min.js"></script>
+    <!-- Style (optional) -->
+    <link rel="stylesheet" href="public/angular-google-places-map/dist/css/ngplacesmap.min.css">
 
 </head>
 
@@ -52,7 +67,7 @@
                 <menu-item label="Visits" icon="fa-pie-chart" route="CustomerVisit"></menu-item>
                 <menu-item label="Head Count" icon="fa-line-chart" route="HeadCount"></menu-item>
             </menu-group>
-            <menu-item label="Locations" icon="fa-globe" route="locations"></menu-item>
+            <menu-item label="Locations" icon="fa-globe" route="Location"></menu-item>
             <menu-item label="Account" icon="fa-user" route="account"></menu-item>
             <menu-item label="Contact" icon="fa-compress" route="contact"></menu-item>           
         </menu>        

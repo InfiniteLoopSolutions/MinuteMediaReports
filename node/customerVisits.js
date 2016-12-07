@@ -1,15 +1,17 @@
 /**
  * Created by jude on 28/11/2016.
  */
-module.exports = {
+module.exports.pieDuration =
+    function (queryDate, venueid, callback) {
 
-    pieDuration: function (queryDate, venueid) {
+    var labelsArray=[];
+    var dataArray=[];
 
-        var lessThan30 = 10;
-        var between3060 = 10;
-        var between6090 = 10;
-        var between90120 = 10;
-        var greaterThan120 = 10;
+        var lessThan30 = 1;
+        var between3060 = 1;
+        var between6090 = 1;
+        var between90120 = 1;
+        var greaterThan120 = 1;
         var previousMac = "";
         var currentMac = "";
         var currentTime = 0;
@@ -78,14 +80,18 @@ module.exports = {
                     for (var i = 0; i < result.length; i++) {
                         calcFrequencies(result[i]);
                     }
+
+                    dataArray = [lessThan30, between3060, between6090, between90120, greaterThan120];
+                    labelsArray = ["<30", "30 - 60", " 60-90", "90-120", ">120"];
+
+                    callback([labelsArray, dataArray]);
                 } else {
                     console.log('No document(s) found with defined "find" criteria!');
                 }
+
             });
             db.close;
         });
-        return [labels, data];
-    }
 }
 
 
