@@ -51,11 +51,11 @@ app.get('/serviceDay', function(request, response) {
 
 app.get('/headCount', function(request, response) {
 
-    var labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+    var labels = ['1', '2', '3', '4', '5', '6', '7','8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23','24'];
     var series = ['Series A', 'Series B'];
-    var data = [[65, 59, 80, 81, 56, 55, 40], [28, 48, 40, 19, 86, 27, 90]];
+    var data = [[5, 3, 0, 0, 0, 0, 2, 5, 5, 5, 5, 11, 20, 75, 100, 25, 20, 10, 40, 65, 159, 80, 181, 56], [5, 3, 0, 0, 0, 0, 2, 5, 5, 5, 5, 9, 9, 25, 50, 20, 15, 9, 25, 33, 56, 80, 45, 56]];
 
-    response.send(labels, series, data);
+    response.send([labels, series, data]);
 });
 
 app.get('/reportFour', function(request, response) {

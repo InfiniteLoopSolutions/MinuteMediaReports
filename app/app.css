@@ -1,13 +1,12 @@
 ﻿body {
-    background-color: gray;
-    font-family: "Open sans", sans-serif;
+    background-color: white;
+    font-family: "Open Sans", Arial, sans-serif;
 }
 
 .container-fluid {
-    padding: 0px;
+    padding: 0;
 }
 
-.menu-left {
-    padding-left: 0;
-    margin-top: 0;
+.sign-in-form {
+    padding: 80px;
 }

@@ -27,6 +27,8 @@ angular.module("app").controller("serviceDayCtrl", ["$scope", "serviceDayService
 
     $scope.names = ["7 Days", "4 Weeks", "6 Months"];
 
+    $scope.title = "Service Day Report"
+
     $('#datetimepicker1').datetimepicker({
         viewMode: 'days',
         format: 'DD/MM/YYYY'

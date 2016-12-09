@@ -4,20 +4,19 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
         .when("/HeadCount", {
-            template : "<head-count-directive></head-count-directive>"
+            template : "<headcount-directive></headcount-directive>"
         })
         .when("/ServiceDay", {
             templateUrl : "graphs/serviceDay.html",
             controller: "serviceDayCtrl"
         })
         .when("/CustomerVisit", {
-            template : "<customer-visits-directive ng-model='$parent.query.Date'></customer-visits-directive>"
+            template : "<customer-visits-directive></customer-visits-directive>"
         })
         .when("/Location", {
-            templateUrl : "location/location.html",
-            controller: "locationCtrl"
+            templateUrl : "location/location.html"
         })
 
-    $routeProvider.otherwise({ redirectTo: '/' });
+    $routeProvider.otherwise({ redirectTo: '/Location' });
 
 }]);

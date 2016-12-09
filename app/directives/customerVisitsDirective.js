@@ -1,21 +1,27 @@
 ﻿"use strict";
 
-angular.module('app').directive('customerVisitsDirective', function() {
+angular.module('app').directive('customerVisitsDirective', function () {
     return {
         restrict: 'EA',
         scope: {
             model: '=ngModel'
         },
-        require: '^ngModel',
         templateUrl: 'graphs/customerVisit.html',
-        controller: ('inputController', ['customerVisitsService', function(scope, customerVisitsService) {
+        controller: ('inputController', ['$scope', 'customerVisitsService', function ($scope, customerVisitsService) {
+
+            var selected = {
+                date: "28/11/2016"
+            }
+
+            $scope.selected = selected;
+            // $scope.selected.date =  selected.date;
 
             $('#datetimepicker').datetimepicker({
                 viewMode: 'days',
                 format: 'DD/MM/YYYY'
             });
 
-            scope.options = {
+            $scope.options = {
                 scales: {
                     yAxes: [
                         {
@@ -33,30 +39,20 @@ angular.module('app').directive('customerVisitsDirective', function() {
                     ]
                 }
             };
-            scope.title = "Customer Visit Duration";
+            $scope.title = "Customer Visit Duration";
 
-            scope.changeVisitDate = function(name){
+            $scope.changeVisitDate = function (name) {
 
-                var selectedDate = scope.selected.date;
+                var selectedDate = $scope.selected.date;
 
-                var selectedDate = $('inputQueryDate').innerText
-
-                customerVisitsService.visits(selectedDate).then(function(response) {
-                    scope.labels = response.data[0];
-                    scope.data =  response.data[1];
+                customerVisitsService.visits(selectedDate).then(function (response) {
+                    $scope.labels = response.data[0];
+                    $scope.data = response.data[1];
                 });
             }
         }]),
-        link: function(scope, iElement, attrs, ctrl) {
+        link: function (scope, iElement, attrs, ctrl) {
 
-            scope.$watch('model', function() {
-            scope.$eval(attrs.ngModel + ' = model');
-            });
-
-            // Send out changes from inside:
-            scope.$watch(attrs.ngModel, function(val) {
-                scope.model = val;
-            });
         }
     };
 });

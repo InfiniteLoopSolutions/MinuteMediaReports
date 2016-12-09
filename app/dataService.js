@@ -55,11 +55,10 @@ angular.module('app').factory("headCountService", function($http) {
 
     var factory = {};
 
-    factory.head = function (date, reportType) {
+    factory.head = function (date) {
 
         var data = {
             queryDateRange: date,
-            reportType: reportType,
             venueid: "ac:86:74:0b:c7:08"
         };
 
@@ -70,4 +69,5 @@ angular.module('app').factory("headCountService", function($http) {
 
         return $http.get("/headCount", config);
     }
+    return factory;
 });
